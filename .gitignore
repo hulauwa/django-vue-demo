@@ -1,0 +1,10 @@
+# Ignore Python virtual environment
+venv/
+
+# Ignore frontend build directory
+frontend/node_modules/
+frontend/dist/
+
+# Ignore environment variables files
+.env
+
