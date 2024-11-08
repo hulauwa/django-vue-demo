@@ -1,3 +1,4 @@
+
 """
 Django settings for backend project.
 
@@ -35,10 +36,9 @@ SECRET_KEY = 'django-insecure-m0&bthch#)(0l&6=mc%uvuqi_pir0z68g2!9%(ds1+8chf_+n=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['estasnino.com','estasnino.com:4000']
 
-
-# Application definition
+## Application definition
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -129,11 +129,21 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
+# Đường dẫn đến các tệp tĩnh trong dự án
 
-STATIC_URL = 'static/'
+# Đường dẫn để thu thập các tệp tĩnh khi chạy collectstatic
 
+# Cấu hình STATICFILES_DIRS
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'site', 'public', 'static'),  # Thư mục chứa các tệp tĩnh
+]
+
+# Đường dẫn thu thập tệp tĩnh vào thư mục mà bạn sẽ phục vụ chúng
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Thư mục nơi Django sẽ thu thập các tệp tĩnh
+# settings.py
+STATIC_URL = '/static/'
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-CORS_ALLOWED_ORIGINS = []
+CORS_ALLOWED_ORIGINS = ['*']
