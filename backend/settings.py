@@ -12,14 +12,16 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 
-
 from dotenv import load_dotenv
 import os
 
+# Tải file .env
 load_dotenv()
 
+# Lấy các biến môi trường
 SECRET_KEY = os.getenv('SECRET_KEY')
 DEBUG = os.getenv('DEBUG') == 'True'
+
 
 
 
